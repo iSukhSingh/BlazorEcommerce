@@ -2,6 +2,7 @@
 {
     public interface IProductService
     {
-        Task<ServiceResponse<List<Product>>> GetProductAsyncs();
+        Task<ServiceResponse<List<Product>>> GetProductsAsyncs();
+        Task<ServiceResponse<Product>> GetProductAsync(int productId);
     }
 }

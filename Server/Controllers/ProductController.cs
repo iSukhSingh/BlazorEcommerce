@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BlazorEcommerce.Shared;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorEcommerce.Server.Controllers
@@ -14,9 +15,17 @@ namespace BlazorEcommerce.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProduct()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
-            var result = await _producrService.GetProductAsyncs();
+            var result = await _producrService.GetProductsAsyncs();
+            return Ok(result);
+        }
+
+
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProduct(int productId)
+        {
+            var result = await _producrService.GetProductAsync(productId);
             return Ok(result);
         }
     }
