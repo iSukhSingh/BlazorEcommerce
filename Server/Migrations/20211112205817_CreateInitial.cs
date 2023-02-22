@@ -4,10 +4,8 @@
 
 namespace BlazorEcommerce.Server.Migrations
 {
-    /// <inheritdoc />
     public partial class CreateInitial : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -19,7 +17,7 @@ namespace BlazorEcommerce.Server.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "Decimal(18,2)", nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,7 +25,6 @@ namespace BlazorEcommerce.Server.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

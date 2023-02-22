@@ -11,18 +11,17 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorEcommerce.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230220164812_CreateInitial")]
+    [Migration("20211112205817_CreateInitial")]
     partial class CreateInitial
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.3")
+                .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("BlazorEcommerce.Shared.Product", b =>
                 {
@@ -30,7 +29,7 @@ namespace BlazorEcommerce.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -41,7 +40,7 @@ namespace BlazorEcommerce.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("Decimal(18,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Title")
                         .IsRequired()
