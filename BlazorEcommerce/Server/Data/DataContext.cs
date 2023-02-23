@@ -141,7 +141,6 @@
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Nintendo-Super-Famicom-Set-FL.jpg",
                     }
                     );
-
             modelBuilder.Entity<ProductVariant>().HasData(
                 new ProductVariant
                 {
