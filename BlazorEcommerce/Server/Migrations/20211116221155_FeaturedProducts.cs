@@ -4,7 +4,7 @@
 
 namespace BlazorEcommerce.Server.Migrations
 {
-    public partial class featureProducts : Migration
+    public partial class FeaturedProducts : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
