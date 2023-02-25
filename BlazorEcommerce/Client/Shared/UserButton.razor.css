@@ -1,19 +1,15 @@
 ﻿.show-menu {
-    display:block;
+    display: block;
 }
 
-.user-button{
+.user-button {
     margin-left: .5em;
 }
 
-
-.top-row{
+.top-row a {
     margin-left: 0;
 }
 
-
-.drop-item:hover {
-    background-color: antiquewhite;
+.dropdown-item:hover {
+    background-color: white;
 }
-
-
